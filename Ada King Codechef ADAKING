@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(void)
+{
+  int test;
+  cin>>test;
+  while(test--)
+  {
+    int k;
+    int i, j;
+    cin>>k;
+    char chess[8][8];
+    chess[0][0]='O';
+    k--;
+    for (i=0;i<8;i++)
+    {
+      for (j=0;j<8;j++)
+      {
+        if(i==0 && j==0)
+        {
+          continue;
+        }
+        else if(k>0)
+        {
+          chess[i][j]='.';
+          k--;
+        }
+        else
+        {
+          chess[i][j]='X';
+        }
+
+      }
+    }
+
+    for (i=0;i<8;i++)
+    {
+      for (j=0;j<8;j++)
+      {
+        cout<<chess[i][j];
+      }
+      cout<<endl;
+    }
+  }
+    return 0;
+}
