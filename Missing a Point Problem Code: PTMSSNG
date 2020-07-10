@@ -1,0 +1,39 @@
+#include<iostream>
+#include<set>
+#include<unordered_set>
+using namespace std;
+
+int main(void)
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        unordered_set<int> set1,set2;
+        int n, a, b;
+        cin>>n;
+        for(int i=0;i<((4*n)-1);i++)
+        {
+            cin>>a>>b;
+            if(set1.count(a))
+            {
+                set1.erase(a);
+            }
+            else
+            {
+                set1.insert(a);
+            }
+            if(set2.count(b))
+            {
+                set2.erase(b);
+            }
+            else
+            {
+                set2.insert(b);
+            }
+        }
+
+        cout<<(*(set1.begin()))<<" "<<(*(set2.begin()))<<endl;
+    }
+    return 0;
+}
