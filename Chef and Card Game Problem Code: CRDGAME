@@ -1,0 +1,60 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(void)
+{
+  int test;
+  cin>>test;
+  while(test--)
+  {
+    int n,Count_b=0,Count_a=0;
+    cin>>n;
+    while(n--)
+    {
+      int a,b,RemSum_a=0,RemSum_b=0;
+      cin>>a>>b;
+
+        while(a>0)
+        {
+          RemSum_a+=(a%10);
+          a/=10;
+        }
+        while(b>0)
+        {
+          RemSum_b+=(b%10);
+          b/=10;
+        }
+        if(RemSum_b==RemSum_a)
+        {
+          Count_b++;
+          Count_a++;
+        }
+        else
+        {
+          if(RemSum_b>RemSum_a)
+          {
+            Count_b++;
+          }
+          else
+          {
+            Count_a++;
+          }
+        }
+    }
+    if(Count_a==Count_b)
+    {
+      cout<<2<<" "<<Count_a<<endl;
+    }
+    else
+    {
+      if(Count_a>Count_b)
+      {
+        cout<<0<<" "<<Count_a<<endl;
+      }
+      else
+      {
+        cout<<1<<" "<<Count_b<<endl;
+      }
+    }
+  }
+  return 0;
+}
